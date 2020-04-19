@@ -12,3 +12,5 @@ if x_int == secret_number:
 else:
     print('not correct, the number is {0}'.format(secret_number))
 # if not, you say, incorrect, the number is ...
+
+# modify or improve to use try execption whenever you need it

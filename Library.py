@@ -16,7 +16,8 @@ class Library:
     def borrowed_books(self):
         # print and return all the books and the person who borrow
         # Python Book borrowed  by Budi
-        pass
+        for book in self.borrowers:
+            print(book['member'].full_name + ' borrows ' + book['book'].title)
 
     def available_books(self):
         avaiable_books = []
@@ -28,7 +29,11 @@ class Library:
         return avaiable_books
     
 
-
     def list_all_books(self):
         for b in self.books:
             print(b)
+
+    def retrieve_book(self, book):
+        for b in self.borrowers:
+            if b['book'] == book:
+                self.borrowers.remove(b)

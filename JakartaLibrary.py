@@ -20,6 +20,7 @@ members.append(john)
 
 jakarta_library = Library(id=1, name='Jakarta Library', city='Jakarta', books=books, members=members)
 
+print('available books: ')
 print(jakarta_library.available_books())
 
 # budi borrows python book
@@ -31,6 +32,15 @@ doraemon_book.borrow()
 borrower_doraemon = {'member': john, 'book':doraemon_book}
 jakarta_library.borrowers.append(borrower_doraemon)
 
-jakarta_library.available_books()
+print('available books: ')
+print(jakarta_library.available_books())
 
+print('Books being borrowed: ')
 jakarta_library.borrowed_books()
+
+print('returning book:')
+python_book.return_book()
+jakarta_library.retrieve_book(python_book)
+
+print('available books: ')
+print(jakarta_library.available_books())

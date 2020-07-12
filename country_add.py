@@ -32,6 +32,23 @@ def select_city(connection, id):
     else:
         print("No connection")
 
+def update_city(connection, name, population, id):
+    if connection:
+        #city = select_city(connection, id)
+        if name and population:
+            update_sql = "UPDATE cities SET name = {0}, population = {1} WHERE id = {2}".format(name, population, id)
+        else:
+            if name:
+                update_sql = "UPDATE cities SET name = {0} WHERE id = {1}".format(name, id)
+            else:
+                update_sql = "UPDATE cities SET population = {0} WHERE id = {1}".format(population, id)
+        
+        cursor = connection.cursor()
+        cursor.execute(update_sql)
+        connection.commit()
+        print("updated")
+
+
 connection = create_connection('citydb.db')
 
 with connection:
